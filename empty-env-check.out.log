@@ -1,0 +1,5 @@
+[18:55:00.619] [33mWARN[39m (21344): [36mCould not create bucket: AggregateError[39m
+[18:55:00.697] [32mINFO[39m (21344): [36mServer listening at http://127.0.0.1:8080[39m
+[18:55:00.697] [32mINFO[39m (21344): [36mServer listening at http://192.168.29.47:8080[39m
+[18:55:00.697] [32mINFO[39m (21344): [36mServer listening at http://192.168.240.1:8080[39m
+[18:55:00.698] [32mINFO[39m (21344): [36mServer running on port 8080[39m

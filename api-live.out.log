@@ -1,0 +1,29 @@
+[18:46:57.149] [33mWARN[39m (2804): [36mCould not create bucket: AggregateError[39m
+[18:46:57.230] [32mINFO[39m (2804): [36mServer listening at http://127.0.0.1:8080[39m
+[18:46:57.230] [32mINFO[39m (2804): [36mServer listening at http://192.168.29.47:8080[39m
+[18:46:57.230] [32mINFO[39m (2804): [36mServer listening at http://192.168.240.1:8080[39m
+[18:46:57.230] [32mINFO[39m (2804): [36mServer running on port 8080[39m
+[18:46:57.874] [32mINFO[39m (2804): [36mincoming request[39m
+    reqId: "req-1"
+    req: {
+      "method": "GET",
+      "url": "/health",
+      "host": "127.0.0.1:8080",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 64648
+    }
+[18:46:58.334] [32mINFO[39m (2804): [36mrequest completed[39m
+    reqId: "req-1"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 457.90610003471375
+[18:46:58.507] [32mINFO[39m (2804): [36mincoming request[39m
+    reqId: "req-2"
+    req: {
+      "method": "POST",
+      "url": "/api/v1/auth/login",
+      "host": "127.0.0.1:8080",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 64648
+    }

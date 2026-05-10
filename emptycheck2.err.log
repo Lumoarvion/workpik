@@ -1,0 +1,14 @@
+[ioredis] Unhandled error event: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+C:\Users\gowth\Downloads\Prooftrail\Prooftrail\node_modules\ioredis\built\Redis.js:208
+                    reject(new Error(utils_1.CONNECTION_CLOSED_ERROR_MSG));
+                           ^
+
+Error: Connection is closed.
+    at EventEmitter.connectionCloseHandler (C:\Users\gowth\Downloads\Prooftrail\Prooftrail\node_modules\ioredis\built\Redis.js:208:28)
+    at Object.onceWrapper (node:events:633:26)
+    at EventEmitter.emit (node:events:518:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+
+Node.js v22.18.0
