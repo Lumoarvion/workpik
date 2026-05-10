@@ -17,6 +17,7 @@ declare module 'fastify' {
 }
 
 export const s3Plugin = fp(async (fastify: FastifyInstance) => {
+  const publicBaseUrl = process.env.S3_PUBLIC_URL?.replace(/\/+$/, '');
   const client = new S3Client({
     endpoint: process.env.S3_ENDPOINT || 'http://localhost:9000',
     region: 'us-east-1',
@@ -54,6 +55,7 @@ export const s3Plugin = fp(async (fastify: FastifyInstance) => {
       return key;
     },
     async getSignedUrl(key: string, expiresIn = 3600): Promise<string> {
+      if (publicBaseUrl) return `${publicBaseUrl}/${key}`;
       const command = new GetObjectCommand({ Bucket: bucket, Key: key });
       return getSignedUrl(client, command, { expiresIn });
     },

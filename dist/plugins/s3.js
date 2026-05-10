@@ -8,6 +8,7 @@ const fastify_plugin_1 = __importDefault(require("fastify-plugin"));
 const client_s3_1 = require("@aws-sdk/client-s3");
 const s3_request_presigner_1 = require("@aws-sdk/s3-request-presigner");
 exports.s3Plugin = (0, fastify_plugin_1.default)(async (fastify) => {
+    const publicBaseUrl = process.env.S3_PUBLIC_URL?.replace(/\/+$/, '');
     const client = new client_s3_1.S3Client({
         endpoint: process.env.S3_ENDPOINT || 'http://localhost:9000',
         region: 'us-east-1',
@@ -44,6 +45,8 @@ exports.s3Plugin = (0, fastify_plugin_1.default)(async (fastify) => {
             return key;
         },
         async getSignedUrl(key, expiresIn = 3600) {
+            if (publicBaseUrl)
+                return `${publicBaseUrl}/${key}`;
             const command = new client_s3_1.GetObjectCommand({ Bucket: bucket, Key: key });
             return (0, s3_request_presigner_1.getSignedUrl)(client, command, { expiresIn });
         },
